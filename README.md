@@ -1,5 +1,6 @@
 # study-laravel
 Laravel学習用のプロジェクトです。
+
 Forkして使ってください。
 
 ## 開発環境の構築
@@ -43,7 +44,7 @@ $ docker-compose exec workspace bash
 ```
 $ cd ~/your/workspace/study-laravel/laradock-study_laravel
 $ docker-compose exec workspace bash
-# php artisan key:generate
+# cp .env.example .env
 ```
 
 ### 8. アプリケーションキーの設定

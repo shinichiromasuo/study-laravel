@@ -77,10 +77,12 @@ http://localhost/
 ### 作業環境へのアクセス
 コマンドの実行（Composer、Artisan、PHPUnit等）はworkspaceコンテナの中で行ってください。
 ```
+$ cd ~/your/workspace/study-laravel/laradock-study_laravel
 $ docker-compose exec workspace bash
 ```
 
 ### DBへのアクセス
 ```
+$ cd ~/your/workspace/study-laravel/laradock-study_laravel
 $ docker-compose exec mysql mysql -u study_laravel -pstudy_laravel study_laravel
 ```

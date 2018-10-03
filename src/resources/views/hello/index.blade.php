@@ -8,9 +8,24 @@
 @endsection
 
 @section('content')
-    <p>ここが本文のコンテンツです。</p>
-    <p>Controller value<br>'message' = {{$message}}</p>
-    <p>ViewComposer value<br>'view_message' = {{$view_message}}</P>
+    <p>{{$msg}}</p>
+    @if (count($errors) > 0)
+    <p>入力に問題があります。再入力してください。</p>
+    @endif
+
+    <table>
+    <form action="/hello" method="post">
+        {{ csrf_field() }}
+        @if ($errors->has('msg'))
+        <tr><th>ERROR</th><td>{{$errors->first('msg')}}</td></tr>
+        @endif
+
+        <tr><th>Message: </th><td><input type="text" name="msg"
+            value="{{old('msg')}}"></td</tr>
+        <tr><th></th><td><input type="submit" value="send"></td></tr>
+
+    </form>
+    </table>
 
 @endsection
 

@@ -59,12 +59,18 @@ $ docker-compose exec workspace bash
 
 変更前：
 ```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 変更後：
 ```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
 DB_DATABASE=study_laravel
 DB_USERNAME=study_laravel
 DB_PASSWORD=study_laravel

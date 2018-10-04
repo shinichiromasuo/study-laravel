@@ -184,7 +184,7 @@ APACHE_DOCUMENT_ROOT=/var/www/
 
 ### MYSQL #################################################
 
-MYSQL_VERSION=latest
+MYSQL_VERSION=5.7
 MYSQL_DATABASE=study_laravel
 MYSQL_USER=study_laravel
 MYSQL_PASSWORD=study_laravel

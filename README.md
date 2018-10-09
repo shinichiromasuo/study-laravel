@@ -4,7 +4,7 @@ Laravel学習用のプロジェクトです。
 Forkして使ってください。
 
 ## 開発環境の構築
-### 1. プロジェクトをForkする
+### 1. プロジェクトのFork
 GitHubからこのプロジェクトをForkしてください。
 
 ### 2. ソースコードの取得
@@ -59,12 +59,18 @@ $ docker-compose exec workspace bash
 
 変更前：
 ```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 変更後：
 ```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
 DB_DATABASE=study_laravel
 DB_USERNAME=study_laravel
 DB_PASSWORD=study_laravel
@@ -77,10 +83,12 @@ http://localhost/
 ### 作業環境へのアクセス
 コマンドの実行（Composer、Artisan、PHPUnit等）はworkspaceコンテナの中で行ってください。
 ```
+$ cd ~/your/workspace/study-laravel/laradock-study_laravel
 $ docker-compose exec workspace bash
 ```
 
 ### DBへのアクセス
 ```
+$ cd ~/your/workspace/study-laravel/laradock-study_laravel
 $ docker-compose exec mysql mysql -u study_laravel -pstudy_laravel study_laravel
 ```

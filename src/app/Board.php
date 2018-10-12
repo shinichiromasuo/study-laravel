@@ -9,14 +9,14 @@ class Board extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'person_id' => 'required',
+        'person_id' => "required|exists:people,id",
         'title' => 'required',
         'message' => 'required',
     );
 
     public function getData()
     {
-        return $this->id . ': ' . $this->title = 'こんにちは' . ' (' . $this->person->name . ')';
+        return $this->id . ': ' . $this->title  . ' (' . $this->person->name . ')';
     }
 
     public function person()

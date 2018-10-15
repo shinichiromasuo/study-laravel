@@ -25,7 +25,6 @@
         </tr>
     @endforeach
     </table>
-
     <div style="margin:10px;"></div>
     <table>
     <tr><th>Person</th></tr>
@@ -35,6 +34,7 @@
         </tr>
     @endforeach
     </table>
+
 @endsection
 
 @section('footer')

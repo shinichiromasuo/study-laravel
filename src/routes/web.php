@@ -20,6 +20,9 @@ Route::get('hello', 'HelloController@index')
     ->middleware('auth');
 Route::post('hello', 'HelloController@post');
 
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
+
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
 

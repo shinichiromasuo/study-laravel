@@ -14,8 +14,6 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        \Log::debug("index action");
-
         $user = Auth::user();
         $sort = $request->input('sort', 'id');
         $items = Person::orderBy($sort, 'asc')->paginate(3);

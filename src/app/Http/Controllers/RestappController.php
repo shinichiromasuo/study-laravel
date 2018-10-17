@@ -36,6 +36,7 @@ class RestappController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, Restdata::$rules);
         $restdata = new Restdata;
         $form = $request->all();
         unset($form['_token']);
@@ -76,6 +77,7 @@ class RestappController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, Restdata::$rules);
         $restdata = Restdata::find($id);
         $form = $request->all();
         $restdata->fill($form)->save();

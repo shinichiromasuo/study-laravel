@@ -10,8 +10,8 @@ class Restdata extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'message' => 'required',
-        'url' => 'required'
+        'message' => 'required|between:1,255',
+        'url' => 'required|between:1,255'
     );
 
     public function getData()

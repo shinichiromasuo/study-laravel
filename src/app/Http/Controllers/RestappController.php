@@ -15,7 +15,7 @@ class RestappController extends Controller
     public function index()
     {
         $items = Restdata::all();
-        return $items->toArray();
+        return view('rest.index',  ['items' =>  $items]);
     }
 
     /**
@@ -52,7 +52,7 @@ class RestappController extends Controller
     public function show($id)
     {
         $item = Restdata::find($id);
-        return $item->toArray();
+        return view('rest.show', ['item' => $item]);
     }
 
     /**
@@ -63,7 +63,8 @@ class RestappController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Restdata::find($id);
+        return view('rest.edit', ['item' => $item]);
     }
 
     /**
@@ -75,7 +76,10 @@ class RestappController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $restdata = Restdata::find($id);
+        $form = $request->all();
+        $restdata->fill($form)->save();
+        return redirect('/rest');
     }
 
     /**
@@ -86,6 +90,7 @@ class RestappController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Restdata::find($id)->delete();
+        return redirect('/rest');
     }
 }

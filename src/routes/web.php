@@ -54,7 +54,6 @@ Route::get('board', 'BoardController@index');
 Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 
-Route::resource('rest', 'RestappController');
 
 Route::get('hello/rest', 'HelloController@rest');
 
@@ -64,3 +63,5 @@ Route::post('hello/session', 'HelloController@ses_put');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('rest', 'RestappController');

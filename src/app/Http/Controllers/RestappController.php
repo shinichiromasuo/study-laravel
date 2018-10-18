@@ -15,7 +15,7 @@ class RestappController extends Controller
     public function index()
     {
         $items = Restdata::all();
-        return view('rest.index',  ['items' =>  $items]);
+        return view('rest.index', ['items' =>  $items]);
     }
 
     /**
@@ -53,7 +53,7 @@ class RestappController extends Controller
     public function show($id)
     {
         $item = Restdata::find($id);
-        if($item == null) {
+        if (is_null($item)) {
             abort('404');
         }
         return view('rest.show', ['item' => $item]);
@@ -68,7 +68,7 @@ class RestappController extends Controller
     public function edit($id)
     {
         $item = Restdata::find($id);
-        if($item == null) {
+        if (is_null($item)) {
             abort('404');
         }
         return view('rest.edit', ['item' => $item]);

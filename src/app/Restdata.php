@@ -11,7 +11,7 @@ class Restdata extends Model
 
     public static $rules = array(
         'message' => 'required|between:1,255',
-        'url' => 'required|between:1,255'
+        'url' => 'required|between:1,255|active_url'
     );
 
     public function getData()

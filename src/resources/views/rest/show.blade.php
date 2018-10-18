@@ -8,7 +8,6 @@
 @endsection
 
 @section('content')
-    @if ($item != null)
     <table>
         <tr><th>id</th><th>name</th><th>url</th></tr>
         <td>{{$item->id}}</td>
@@ -21,9 +20,6 @@
             <td><input type="submit" value="del"></td>
         </form>
     </table>
-    @else
-        404 not found
-    @endif
 @endsection
 
 @section('footer')
